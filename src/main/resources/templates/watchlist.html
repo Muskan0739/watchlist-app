@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+    <link rel="stylesheet" href="/css/watchlistCss.css">
+</head>
+<body>
+
+    <!--nav-->
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="watchlist" class="active">WatchList</a></li>
+                <li><a href="submitmovie">Submit Movie</a></li>
+            </ul>
+        </nav>
+
+    <div class="container">
+        <h1>WATCHLIST</h1>
+
+        <!-- Movie Table -->
+        <table id="movieTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Rating</th>
+                    <th>Priority</th>
+                    <th>Comment</th>
+                     <th>Action</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="movierow: ${watchlistRows}"><!-- for each loop of thymeleaf -->
+                    <td th:text="${movierow.title}">Avengers</td>
+                    <td th:text="${movierow.rating}">8.08</td>
+                    <td th:text="${movierow.priority}">high</td>
+                    <td th:text="${movierow.comment}">Good Movie</td>
+                    <td>
+                    <a th:href="@{/submitmovie(id=${movierow.id})}">
+                    <button class="update-btn">Update</button>
+                    </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Movie Count -->
+        <p id="movieCount">Number of movies to watch: <span th:text="${numofmovies}"></p>
+
+       
+
+    <script src="/js/watchlistScript.js"></script>
+</body>
+</html>

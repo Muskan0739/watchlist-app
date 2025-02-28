@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Movie</title>
+    <style>
+        body {
+            background-color: #111010;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #2C2C2C;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar a {
+            color: #FF632F;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+        .navbar a.active {
+            color: white;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .ellipse {
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            background-color: #D9D9D9;
+            border-radius: 50%;
+            top: 40%;
+            z-index: 0;
+            border: 5px solid #FF632F;
+        }
+        .form-container {
+            position: relative;
+            background-color: #FF632F;
+            padding: 30px;
+            border-radius: 5px;
+            width: 350px;
+            z-index: 1;
+        }
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+        }
+        .submit-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        div a:hover {
+          color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="">Home</a>
+        <a href="watchlist">WatchList</a>
+        <a href="submitmovie" class="active">Submit Movie</a>
+    </div>
+    <div class="container">
+        <div class="ellipse"></div>
+        <div class="form-container">
+            <form th:action="@{/submitmovie}" action="#" method="post" th:object="${watchlistItem}">
+                <label for="title">Title</label>
+                <input th:field="*{title}" type="text" id="title" placeholder="Mandatory">
+                <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></span>
+                
+                
+                <label for="rating">Rating</label>
+                <input th:field="*{rating}" type="number" id="rating" step="0.1" placeholder="0.0">
+                <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}" class="error"></span>0
+                
+                <label for="priority">Priority</label>
+                <input th:field="*{priority}" type="text" id="priority" placeholder="L|M|H">
+                <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}" class="error"></span>
+                
+                
+                <label for="comment">Comment</label>
+                <textarea th:field="*{comment}" id="comment" rows="3" placeholder="Description" ></textarea>
+                <span th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="error"></span>
+               
+                <!-- Adding hidden id field in the form to get data by id while updating -->
+                <input type="hidden" th:field="*{id}"/>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

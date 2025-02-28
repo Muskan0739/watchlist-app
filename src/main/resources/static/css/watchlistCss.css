@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #323232;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #2C2C2C;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FF7A4D;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+nav ul li a.active {
+    color: white;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #171717;
+    color: white;
+}
+
+td {
+    background-color: #D9D9D9;
+    color: black;
+}
+
+/* Update Button */
+.update-btn {
+    background-color: #FF6836;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 12px 18px; 
+    font-size: 16px;  
+}
+
+
+.update-btn:hover {
+    opacity: 0.85;
+}
+
+/* Movie Count */
+#movieCount {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Add Movie Form */
+.add-movie {
+    margin-top: 20px;
+}
+
+.add-movie input {
+    padding: 8px;
+    margin: 5px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+}
+
+.add-movie button {
+    padding: 8px 15px;
+    background-color: #FF6836;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-movie button:hover {
+    opacity: 0.8;
+}
