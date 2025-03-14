@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,11 +23,13 @@
         <div class="content">
             <h1>Welcome to the WatchList application!</h1>
             <p>Made for movie lovers who have a hard time choosing their next movie to watch.</p>
-            <button class="signup-btn">SIGN UP</button>
+                <!-- Show Sign Up Button Only If User is NOT Logged In -->
+           <a th:if="${session.loggedInUser == null}" th:href="@{/signup}"> <button class="signup-btn">SIGN UP</button> </a>
+               <!-- Show Logout Button If User is Logged In -->
+           <a th:if="${session.loggedInUser != null}" th:href="@{/logout}"> <button class="signup-btn">LOG OUT</button> </a>
         </div>
         
     </section>
 
-    <script src="/js/script.js"></script>
 </body>
 </html>

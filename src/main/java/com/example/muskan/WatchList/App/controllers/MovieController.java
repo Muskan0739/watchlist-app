@@ -15,7 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.muskan.WatchList.App.entity.Movie;
+import com.example.muskan.WatchList.App.entity.UserInfo;
 import com.example.muskan.WatchList.App.services.DatabaseService;
+import com.example.muskan.WatchList.App.services.UserService;
 
 import jakarta.validation.Valid;
 
@@ -24,6 +26,7 @@ public class MovieController {
 	
 	@Autowired
 	DatabaseService dbservice;
+	
 
 	@GetMapping("/submitmovie")
 	public ModelAndView showsubmitMovieForm(@RequestParam(required=false) Integer id) {
