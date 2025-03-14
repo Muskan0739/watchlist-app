@@ -29,7 +29,7 @@ A web application to track movies, view ratings from OMDb API, and manage a pers
 
 3. **Access the App: Open your browser and go to**:
    ```sh
-   http://localhost:8080
+   http://localhost:8082
 
 ## 📸 Screenshots (To Be Added Later)
 
