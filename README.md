@@ -29,13 +29,17 @@ This project demonstrates backend development skills using Spring Boot, external
 
 ## 📸 Screenshots
 
-> Screenshots will be added soon.
-
-<!--
-Example (add later):
+### Home Page
 ![Home Page](screenshots/home.png)
+
+### SignUp Page
+![SignUp Form](screenshots/Signup_Form.png)
+
+### Submit Movie
+![Add Movie Page](screenshots/add_movie.png)
+
+### Watchlist Page
 ![Watchlist Page](screenshots/watchlist.png)
--->
 
 ---
 
@@ -119,7 +123,7 @@ Contributions are welcome!
 
 This project is licensed under the MIT License.
 
-See the LICENSE file for details.
+See the `LICENSE` file for details.
 
 ---
 ## 👩‍💻 Author
