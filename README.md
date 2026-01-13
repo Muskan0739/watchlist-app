@@ -1,3 +1,5 @@
+![Java CI](https://github.com/Muskan0739/watchlist-app/actions/workflows/ci.yml/badge.svg)
+
 # 🎬 Watchlist App
 
 A simple and user-friendly **Watchlist application** that allows users to search movies and manage a personal watchlist.  
