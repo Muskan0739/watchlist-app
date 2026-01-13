@@ -25,7 +25,7 @@ A web application to track movies, view ratings from OMDb API, and manage a pers
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/Muskan0739/WatchList_App.git
+   git clone https://github.com/Muskan0739/watchlist-app.git
    cd watchlist-app
    ```
 
