@@ -1,0 +1,67 @@
+# Docker ignore file
+# Exclude files that shouldn't be in the Docker build context
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*~
+
+# Logs
+*.log
+logs/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation (build these separately if needed)
+*.md
+!README.md
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Test files
+**/*Test.java
+**/*Tests.java
+
+# Deployment files
+DEPLOYMENT.md
+render.yaml
+Procfile
+system.properties

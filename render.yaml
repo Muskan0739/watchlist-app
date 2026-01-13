@@ -1,0 +1,17 @@
+# Render Blueprint for automatic deployment
+# https://render.com/docs/blueprint-spec
+
+services:
+  # Web Service
+  - type: web
+    name: watchlist-app
+    env: docker
+    region: oregon
+    plan: free
+    branch: main
+    healthCheckPath: /
+    envVars:
+      - key: SERVER_PORT
+        value: 8082
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
