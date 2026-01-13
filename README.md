@@ -1,47 +1,131 @@
-# 🎬 WatchList_App
+# 🎬 Watchlist App
 
-A web application to track movies, view ratings from OMDb API, and manage a personalized watchlist.
+A simple and user-friendly **Watchlist application** that allows users to search movies and manage a personal watchlist.  
+Built using **Java, Spring Boot, Thymeleaf**, and the **OMDb API**.
+
+This project demonstrates backend development skills using Spring Boot, external API integration, and server-side rendering.
+
+---
 
 ## 🚀 Features
-- 🎥 **Add & Manage Watchlist**: Add movies with title, rating, priority, and comments.
-- 🌟 **OMDb API Integration**: Fetches IMDb ratings automatically if available; otherwise, stores user-provided ratings.
-- ✏️ **Edit & Update**: Modify movie details anytime after submission.
-- ✅ **Form Validation**: Ensures accurate and valid data input.
 
-## 🛠️ Tech Stack
-- **Backend**: Spring Boot, Java
-- **Frontend**: HTML, CSS, JavaScript
-- **Template Engine**: Thymeleaf
-- **Database**: H2 (In-Memory Database)
-- **API Integration**: OMDb API
+- 🔍 Search movies using the OMDb API  
+- ➕ Add movies to a personal watchlist  
+- ✏️ Edit movie details  
+- ❌ Remove movies from the watchlist  
+- 📋 View all saved movies in one place  
+- 🖥️ Clean UI using Thymeleaf templates  
 
-## 🔧 Setup & Installation
+---
 
-1. **Clone the Repository**:
-   ```sh
-   git clone https://github.com/yourusername/WatchList_App.git
-   cd WatchList_App
+## 🛠 Tech Stack
 
+- **Backend:** Java, Spring Boot  
+- **Frontend:** Thymeleaf, HTML, CSS  
+- **API:** OMDb API  
+- **Build Tool:** Maven  
 
-2. **Run the Application**:
-   ```sh
-   mvn spring-boot:run
+---
 
-3. **Access the App: Open your browser and go to**:
-   ```sh
-   http://localhost:8082
+## 📸 Screenshots
 
-## 📸 Screenshots (To Be Added Later)
+> Screenshots will be added soon.
 
-## 📜 License
+<!--
+Example (add later):
+![Home Page](screenshots/home.png)
+![Watchlist Page](screenshots/watchlist.png)
+-->
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+- Java 17 or higher  
+- Maven  
+- Git  
+
+---
+
+### Steps
+
+```bash
+# Clone the repository
+git clone https://github.com/Muskan0739/watchlist-app.git
+
+# Navigate to the project directory
+cd watchlist-app
+
+# Build the project
+mvn clean install
+
+# Run the application
+mvn spring-boot:run
+
+#Once started, open your browser and go to:
+http://localhost:8082
+```
+---
+Once started, open your browser and go to:
+```bash
+http://localhost:8082
+```
+---
+## 🔑 OMDb API Configuration
+
+This project uses the OMDb API to fetch movie details.
+
+Steps to configure:
+
+   1. Get a free API key from: https://www.omdbapi.com/
+
+   2. Add the API key to your application.properties file:
+```bash
+omdb.api.key=YOUR_API_KEY
+```
+---
+## 📂 Project Structure
+```bash
+watchlist-app
+│── src/main/java
+│── src/main/resources
+│   ├── templates
+│   ├── static
+│── pom.xml
+│── README.md
+```
+---
+## 🚧 Live Demo
+
+🚀 Live demo coming soon
+
+The application will be deployed shortly and the live URL will be added here.
+
+---
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+---
+## 📄 License
 
 This project is licensed under the MIT License.
 
-## 🤝 Contributing
+See the LICENSE file for details.
 
-Contributions are welcome! Feel free to fork this repo and submit a pull request.
+---
+## 👩‍💻 Author
 
-## ⭐ Show some support by starring this repo!
+Muskan Shukla
 
-If you found this project helpful, don't forget to give it a ⭐ on GitHub!
+GitHub: https://github.com/Muskan0739
 
+LinkedIn: https://www.linkedin.com/in/muskan-shukla-974410263/
