@@ -2,8 +2,7 @@
 
 # 🎬 Watchlist App
 
-A simple and user-friendly **Watchlist application** that allows users to search movies and manage a personal watchlist.  
-Built using **Java, Spring Boot, Thymeleaf**, and the **OMDb API**.
+A backend Watchlist application built using **Spring Boot** and **Java 21**, allows users to search movies and manage a personal watchlist. It is fully containerized with **Docker** and configured with a persistent **H2 database**.
 
 This project demonstrates backend development skills using Spring Boot, external API integration, and server-side rendering.
 
@@ -14,16 +13,15 @@ This project demonstrates backend development skills using Spring Boot, external
 - 🔍 Search movies using the OMDb API  
 - ➕ Add movies to a personal watchlist  
 - ✏️ Edit movie details  
-- ❌ Remove movies from the watchlist  
 - 📋 View all saved movies in one place  
-- 🖥️ Clean UI using Thymeleaf templates  
-
+- 🖥️ Clean UI using Thymeleaf templates
 ---
 
 ## 🛠 Tech Stack
 
 - **Backend:** Java, Spring Boot  
-- **Frontend:** Thymeleaf, HTML, CSS  
+- **Frontend:** Thymeleaf, HTML, CSS
+- **Containerization:** Docker
 - **API:** OMDb API  
 - **Build Tool:** Maven  
 
@@ -51,7 +49,7 @@ Follow these steps to run the project locally.
 
 ### Prerequisites
 
-- Java 17 or higher  
+- Java 21 or higher  
 - Maven  
 - Git  
 
@@ -59,28 +57,64 @@ Follow these steps to run the project locally.
 
 ### Steps
 
+ 1. Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/Muskan0739/watchlist-app.git
-
-# Navigate to the project directory
-cd watchlist-app
-
-# Build the project
-mvn clean install
-
-# Run the application
-mvn spring-boot:run
-
-#Once started, open your browser and go to:
-http://localhost:8082
 ```
----
-Once started, open your browser and go to:
+
+2. Navigate to the project directory
+```bash
+cd watchlist-app
+```
+3. Build the Docker image
+```bash
+docker build -t watchlist-app .
+```
+
+4. Run the container (with persistent database)
+```bash
+docker run -d \
+  -p 8082:8080 \
+  -v watchlist-data:/data \
+  --name watchlist-container \
+  watchlist-app
+
+```
+5. Once started, open your browser and go to:
 ```bash
 http://localhost:8082
 ```
 ---
+## 🗄️ Database Configuration (H2 – File Mode)
+The application uses H2 in file mode.
+```bash
+spring.datasource.url=jdbc:h2:file:/data/watchlist-db
+```
+✅ Benefits
+
+Data is stored on disk
+
+Data persists across container restarts
+
+Docker volume (watchlist-data) keeps DB safe
+
+---
+
+## 🔍 H2 Console
+
+URL: http://localhost:8082/h2-console
+
+JDBC URL:
+```bash
+jdbc:h2:file:/data/watchlist-db
+
+Username: sa
+
+Password: (empty)
+```
+
+---
+
 ## 🔑 OMDb API Configuration
 
 This project uses the OMDb API to fetch movie details.
@@ -93,7 +127,9 @@ Steps to configure:
 ```bash
 omdb.api.key=YOUR_API_KEY
 ```
+
 ---
+
 ## 📂 Project Structure
 ```bash
 watchlist-app
@@ -101,6 +137,7 @@ watchlist-app
 │── src/main/resources
 │   ├── templates
 │   ├── static
+│── Dockerfile
 │── pom.xml
 │── README.md
 ```
