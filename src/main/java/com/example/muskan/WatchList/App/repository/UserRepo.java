@@ -8,4 +8,5 @@ import com.example.muskan.WatchList.App.entity.UserInfo;
 @Repository
 public interface UserRepo extends JpaRepository<UserInfo, Integer>{
 
+	UserInfo findByEmail(String email);
 }

@@ -28,6 +28,14 @@ public class Movie {
 	@Size(max=50, message="Maximum 50 characters")
 	public String comment;
 	
+	private String userEmail; 
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
 	
 	public Integer getId() {
 		return id;
@@ -60,6 +68,5 @@ public class Movie {
 		this.comment = comment;
 	}
 	
-	
-	
+
 }

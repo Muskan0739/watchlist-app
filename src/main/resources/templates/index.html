@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WatchList</title>
+    <title>Watchlist</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -15,7 +16,6 @@
                 <li><a href="submitmovie">Submit Movie</a></li>
             </ul>
         </nav>
-        
     </header>
 
     <section class="hero">
@@ -23,13 +23,17 @@
         <div class="content">
             <h1>Welcome to the WatchList application!</h1>
             <p>Made for movie lovers who have a hard time choosing their next movie to watch.</p>
-                <!-- Show Sign Up Button Only If User is NOT Logged In -->
-           <a th:if="${session.loggedInUser == null}" th:href="@{/signup}"> <button class="signup-btn">SIGN UP</button> </a>
-               <!-- Show Logout Button If User is Logged In -->
-           <a th:if="${session.loggedInUser != null}" th:href="@{/logout}"> <button class="signup-btn">LOG OUT</button> </a>
-        </div>
-        
-    </section>
 
+            <!-- Show Sign Up if NOT authenticated -->
+            <a sec:authorize="isAnonymous()" th:href="@{/signup}">
+                <button class="signup-btn">SIGN UP</button>
+            </a>
+
+            <!-- Show Logout if authenticated -->
+            <a sec:authorize="isAuthenticated()" th:href="@{/logout}">
+                <button class="signup-btn">LOG OUT</button>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
