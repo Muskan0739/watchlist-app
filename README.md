@@ -2,9 +2,12 @@
 
 # 🎬 Watchlist App
 
-A backend Watchlist application built using **Spring Boot** and **Java 21**, allows users to search movies and manage a personal watchlist. It is fully containerized with **Docker** and configured with a persistent **H2 database**.
+A secure full-stack Watchlist application built using Spring Boot and Java 21.  
+Users can search movies and manage a personal watchlist.  
+The application is containerized using Docker and deployed on AWS Elastic Beanstalk.
 
-This project demonstrates backend development skills using Spring Boot, external API integration, and server-side rendering.
+
+This project demonstrates backend development skills using Spring Boot, Spring Security, external API integration, Containerization(Docker) and server-side rendering.
 
 ---
 
@@ -15,13 +18,16 @@ This project demonstrates backend development skills using Spring Boot, external
 - ✏️ Edit movie details  
 - 📋 View all saved movies in one place  
 - 🖥️ Clean UI using Thymeleaf templates
+- 🔐 User authentication using Spring Security with BCrypt password encryption
 ---
 
 ## 🛠 Tech Stack
 
 - **Backend:** Java, Spring Boot  
-- **Frontend:** Thymeleaf, HTML, CSS
-- **Containerization:** Docker
+- **Frontend:** Thymeleaf, HTML, CSS  
+- **Security:** Spring Security, BCrypt  
+- **Containerization:** Docker  
+- **Cloud:** AWS Elastic Beanstalk  
 - **API:** OMDb API  
 - **Build Tool:** Maven  
 
@@ -100,21 +106,6 @@ Docker volume (watchlist-data) keeps DB safe
 
 ---
 
-## 🔍 H2 Console
-
-URL: http://localhost:8082/h2-console
-
-JDBC URL:
-```bash
-jdbc:h2:file:/data/watchlist-db
-
-Username: sa
-
-Password: (empty)
-```
-
----
-
 ## 🔑 OMDb API Configuration
 
 This project uses the OMDb API to fetch movie details.
@@ -144,20 +135,16 @@ watchlist-app
 ---
 ## 🚧 Live Demo
 
-🚀 Live demo coming soon
-
-The application will be deployed shortly and the live URL will be added here.
+http://Watchlist-app-env.eba-hfapqfpv.eu-north-1.elasticbeanstalk.com
 
 ---
-## 🤝 Contributing
 
-Contributions are welcome!
+## 📌 Deployment
 
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Open a Pull Request
+The application is deployed using Docker on AWS Elastic Beanstalk.
+
 ---
+
 ## 📄 License
 
 This project is licensed under the MIT License.
