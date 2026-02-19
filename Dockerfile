@@ -14,13 +14,10 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-# Create a persistent volume for H2 database files
+# Creates a persistent volume for H2 database files
 VOLUME /data
 
-# Copy the JAR built in the previous stage
 COPY --from=build /app/target/*.jar Watchlist.jar
 
-# Expose port 8082
-EXPOSE 8082
-
+EXPOSE 5000
 ENTRYPOINT ["java","-jar","Watchlist.jar"]
