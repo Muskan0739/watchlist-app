@@ -88,7 +88,7 @@ docker run -d \
 ```
 5. Once started, open your browser and go to:
 ```bash
-http://localhost:8082
+http://localhost:5000
 ```
 ---
 ## 🗄️ Database Configuration (H2 – File Mode)
