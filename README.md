@@ -80,7 +80,7 @@ docker build -t watchlist-app .
 4. Run the container (with persistent database)
 ```bash
 docker run -d \
-  -p 8082:8080 \
+  -p 5000:5000 \
   -v watchlist-data:/data \
   --name watchlist-container \
   watchlist-app
